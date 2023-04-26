@@ -1,19 +1,18 @@
 #include <stdio.h>
-/*
-Add `int max_of_four(int a, int b, int c, int d)` here.
-*/
-int max_of_four(int a,int b,int c,int d){
-    if(a>b && a>c && a>d) return a;
-    else if(b>c && b>d) return b;
-    else if(c>d) return c;
-    else return d;
-    
+void update(int *a,int *b) {
+    // Complete this function    
+     int sum,diff;
+     sum = *a+*b;
+     diff = abs(*a-*b);
+     *a = sum;
+     *b = diff;
 }
 int main() {
-    int a, b, c, d;
-    scanf("%d %d %d %d", &a, &b, &c, &d);
-    int ans = max_of_four(a, b, c, d);
-    printf("%d", ans);
+    int a, b;
+    int *pa = &a, *pb = &b;
     
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
     return 0;
 }
